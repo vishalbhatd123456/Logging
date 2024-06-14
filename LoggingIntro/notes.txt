@@ -6,3 +6,11 @@ Course[0] ->ILogger CreateLogger()
 
 Program[0] - 
 ILogger<Program> logger = CreateLogger();
+
+
+LogLevels  Size and the Severity
+logger.LogInformation("Hello");
+
+
+LogLevel.Trace ==> has the highest level of the information and the microsfot switches this off by default
+This should never be used in an prod env
