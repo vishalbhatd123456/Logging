@@ -1,0 +1,8 @@
+Logs are associated with categories and that will allow us to configure the things differently
+Course[0] ->ILogger CreateLogger()
+{
+    return loggerFactory.CreateLogger("Course");
+}
+
+Program[0] - 
+ILogger<Program> logger = CreateLogger();
