@@ -6,7 +6,7 @@ using var loggerFactory = LoggerFactory.Create(builder =>
 {
 #pragma warning disable CA1416
     builder
-        .ToString();
+        .AddJsonConsole();
 #pragma warning restore CA1416
 });
 
@@ -27,5 +27,5 @@ var age = 25;
 
 //The logger actually has only 2 methods more of Log as an imp one
 //the others are just decontructing the same
-logger.LogInformation($"Vishal just turned {age}"); //string interpolation
+logger.LogInformation($"Vishal just turned "); //string interpolation
 logger.Log(LogLevel.Debug, 0, "Hello World!");

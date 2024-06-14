@@ -17,3 +17,6 @@ This should never be used in an prod env
 
 
 ILogger is present at every place, in every application as such
+
+
+When we send the prop objects to the logging, we will send the ability to capture the json objects directly
