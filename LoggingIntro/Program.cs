@@ -1,9 +1,13 @@
 ﻿using Microsoft.Extensions.Logging;
 
-#region explore_later
+#region secret 🤭
+
 using var loggerFactory = LoggerFactory.Create(builder =>
-    builder.AddConsole();
-#pragma warning restore C1416
+{
+#pragma warning disable CA1416
+    builder
+        .ToString();
+#pragma warning restore CA1416
 });
 
 ILogger CreateLogger()
@@ -12,4 +16,4 @@ ILogger CreateLogger()
 }
 #endregion
 
-ILogger logger = CreateLogger();
+Microsoft.Extensions.Logging.ILogger logger = CreateLogger();
