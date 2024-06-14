@@ -17,3 +17,8 @@ ILogger CreateLogger()
 #endregion
 
 Microsoft.Extensions.Logging.ILogger logger = CreateLogger();
+
+logger.LogInformation("Hello world");
+logger.LogCritical("This is a critical message warning");
+logger.LogDebug("Tis is a debug message");
+logger.LogTrace("This is a trace call message");
