@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Text.Json;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 #region secret 🤭
 
@@ -8,6 +10,18 @@ using var loggerFactory = LoggerFactory.Create(builder =>
     builder
         .AddJsonConsole();
 #pragma warning restore CA1416
+});
+
+using var loggerFactory = LoggerFactory.Create(builder => 
+{
+    builder.AddJsonConsole(Options =>
+    {
+        options.IncludeScopes = false;
+        options.TimestampFormat = "HH:mm:ss";
+        options.JsonWriteOptions = new JsonWriterOptions{
+            Intended = true
+        };
+    });
 });
 
 ILogger CreateLogger()
