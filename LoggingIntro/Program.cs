@@ -16,6 +16,19 @@ ILogger CreateLogger()
 }
 #endregion
 
+using IHost host = Host.CreateDefaultBuilder(args)
+.ConfigureLogging(x =>
+    {
+        x.AddJsonConsole();
+    }
+)
+.Build();
+
+var logger = host.Services.GetRequiredService<ILogger<Program>>();
+logger.LogCritical("Critical msg...");
+
+host.Run();
+
 Microsoft.Extensions.Logging.ILogger logger = CreateLogger();
 
 logger.LogInformation("Hello world");
