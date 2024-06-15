@@ -29,3 +29,5 @@ var age = 25;
 //the others are just decontructing the same
 logger.LogInformation($"Vishal just turned "); //string interpolation
 logger.Log(LogLevel.Debug, 0, "Hello World!");
+
+logger.LogInformation(LogEvents.UserBirthday, "{Name} just turned : {Age}", name, age)

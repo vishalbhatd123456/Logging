@@ -20,3 +20,7 @@ ILogger is present at every place, in every application as such
 
 
 When we send the prop objects to the logging, we will send the ability to capture the json objects directly
+
+General convention ==>
+
+ILogger<Program> logger = loggerFactory.CreateLogger<Program>();
