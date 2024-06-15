@@ -24,3 +24,6 @@ When we send the prop objects to the logging, we will send the ability to captur
 General convention ==>
 
 ILogger<Program> logger = loggerFactory.CreateLogger<Program>();
+
+
+The logging interfce and the logger comes from the Microsoft.SDK.Web package and is present in the dependencies 
