@@ -12,6 +12,20 @@ using var loggerFactory = LoggerFactory.Create(builder =>
 #pragma warning restore CA1416
 });
 
+
+if(builder.Environment.IsDevelopment())
+{
+    builder.Logging.ClearProviders();
+    builder.Logging.AddConsole(); 
+    //this will only addd in the consle and not provider in case of INT
+}else
+{
+    builder.Logging.AddApplictionInsights(
+        configureTelemetryConfiguration : teleConfig =>
+            teleConfig.ConnectionString = "Azure connection String"
+                configureAllicationInsightsLoggerOptions: _ => {});
+    )
+}
 using var loggerFactory = LoggerFactory.Create(builder => 
 {
     builder.AddJsonConsole(Options =>
